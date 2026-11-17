@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-fixed-dim": "#bcc5ea", "tertiary-fixed-dim": "#ffb77f", "on-secondary": "#363100", "primary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#4e4800", "outline-variant": "#4c463c", "on-error": "#690005", "inverse-on-surface": "#3b2f13", secondary: "#d7c94d", "on-error-container": "#ffdad6", "on-tertiary": "#4e2600", "on-background": "#f5e0b8", "on-primary": "#262f4d", surface: "#1b1200", "surface-container": "#291e05", "secondary-container": "#9f9316", "on-secondary-container": "#2f2a00", "on-tertiary-fixed": "#2f1500", "tertiary-fixed": "#ffdcc3", "on-primary-container": "#4e5777", "surface-container-high": "#34280e", "on-tertiary-fixed-variant": "#6e3902", "surface-container-highest": "#3f3317", error: "#ffb4ab", "surface-dim": "#1b1200", "secondary-fixed-dim": "#d7c94d", "on-secondary-fixed": "#1f1c00", "on-surface": "#f5e0b8", outline: "#979084", "surface-bright": "#44381b", "surface-tint": "#bcc5ea", "tertiary-container": "#ffc396", "surface-container-lowest": "#150d00", primary: "#e7eaff", tertiary: "#ffe7d7", "inverse-surface": "#f5e0b8", "on-primary-fixed": "#101a37", "on-surface-variant": "#cec5b8", "inverse-primary": "#545d7d", background: "#1b1200", "error-container": "#93000a", "primary-container": "#c5cef3", "surface-container-low": "#241a03", "secondary-fixed": "#f4e566", "on-tertiary-container": "#834a14", "on-primary-fixed-variant": "#3d4664", "surface-variant": "#3f3317"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", gutter: "1rem", "space-xl": "2rem", margin: "1.5rem", "space-lg": "1.5rem", "margin-mobile": "1rem"}, fontFamily: {"headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "body-sm": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-lg-mobile": ["22px", {lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-sm": ["10px", {lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-xl-mobile": ["28px", {lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500"}], "headline-md": ["20px", {lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600"}], "headline-sm": ["16px", {lineHeight: "24px", fontWeight: "600"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600"}], "body-sm": ["12px", {lineHeight: "16px", fontWeight: "400"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="ValueScan Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA3wuk2LjmPjfX4oKk8x8M0V5ObsIcyqbXZcujdmTbGHc_bL5_Ex0zr1tTmm3z5amwtsXpJwUWVGQ7fV0QQIsAylRuw9obYL8-rmppHkloTOE00I09ZMNI5WYpCRBmzyWcsrJ93725jmOHaaEhMwArR-h2AtIk4x2fXFsq6alszP62FeCsPCGioO81WHrvk6p2blvlnkVK1M8ZLZ3CYJAWD0bnF3-u-eWLvk4Aj4Eo"/><div class="flex items-center gap-1.5 ml-1"><span class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">ValueScan</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-wider uppercase">AI</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Perfil de usuario" class="w-11 h-11 flex items-center justify-center rounded-full p-0.5 hover:ring-2 ring-primary transition-all" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnslrSNk7LAdESiwiKke2C-aU2rJ8OpmZa0nFRYDtcQwzZ2WUunto1CaPctfEJ-VP81atPwCGiMJRrxAkvYg4GyXo2yNycVJOl7LdGuC1-RiJzYh4H3HsZOIeGOERRcz_PQnI7yg8PfbEskwDClWi-PYpF8lwbZXKE_cncTE7kDrxrcmUEXen_wAoGnEJ4pl5P_i7xWwjZQ9QwG1U5eD3eoHbib3ugB4IMD6HuuJw"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Top Ambient Glow & Intro Section -->
+<section class="relative px-margin-mobile pt-3 pb-2 flex flex-col items-start overflow-hidden">
+<!-- Subtle algorithmic tech glow in corner -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-10 -left-10 w-36 h-36 bg-secondary-fixed/30 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<!-- AI Active Pill Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-container"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">
+        Motor IA de Reconocimiento v2.4 Activo
+      </span>
+<span class="text-tertiary font-bold text-[10px] bg-tertiary-fixed px-1.5 py-0.2 rounded-full uppercase tracking-tighter">Live</span>
+</div>
+<!-- Main Dynamic Title -->
+<h1 class="mt-3 font-headline-xl-mobile text-headline-xl-mobile text-on-surface tracking-tight leading-snug">
+      Descubre <span class="bg-gradient-to-r from-primary-container via-primary to-secondary bg-clip-text text-transparent">cuánto vale</span> cualquier objeto
+    </h1>
+<!-- Descriptive Subtitle -->
+<p class="mt-1.5 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Escanea, identifica y encuentra su cotización en vivo cotejada en tiempo real.
+    </p>
+<!-- Main Quick Action CTAs -->
+<div class="w-full mt-4 flex flex-col gap-2.5">
+<!-- Primary Scan Trigger Button -->
+<button class="w-full h-[52px] rounded-full bg-primary-container text-on-primary flex items-center justify-center gap-2.5 shadow-[0_8px_24px_rgba(29,78,216,0.30)] active:scale-[0.98] transition-all group" type="button">
+<span class="material-symbols-outlined text-[24px] text-secondary-fixed group-hover:rotate-12 transition-transform duration-300">center_focus_strong</span>
+<span class="font-label-lg text-label-lg font-semibold tracking-wide">Escanear objeto ahora</span>
+<span class="material-symbols-outlined text-[18px] opacity-75 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<!-- Secondary Upload Button -->
+<button class="w-full h-12 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all hover:bg-surface-container-low" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">add_photo_alternate</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Subir desde galería de fotos</span>
+</button>
+</div>
+</section>
+<!-- Central Futuristic Hero Showcase Card -->
+<section class="px-margin-mobile mt-3">
+<div class="relative w-full rounded-xl bg-surface-container-lowest shadow-md overflow-hidden p-3 flex flex-col">
+<!-- Top HUD Metric Badge -->
+<div class="flex items-center justify-between z-10 mb-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high/90 backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px] text-primary font-bold">radar</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Visión Multimodal HUD</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[13px] text-tertiary">check_circle</span>
+<span>Precisión 98.4%</span>
+</div>
+</div>
+<!-- Hero Visual Representation -->
+<div class="relative w-full h-56 rounded-lg overflow-hidden bg-surface-container flex items-center justify-center">
+<img alt="ValueScan visual scanning representation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzLG_9KLDlxp8BvEqSztLWmBVuVBZgkOoce5z0sD4esqWiWQ90IQEDZiAGVVdilIwOVb3Ohfth-Rdwt9Rje1leea3qvoXZMFy_s5aTf6st-ybXNYGfe7kTJRjlpcotOowvPHVpOaHT-FS6Qfc5fLEDJNaIDIJBZ6ngtvMahabA3lHsmL7q6hULkJkWk_eJj5zLiADX9e2IVQfBsCus_Vv2rNpmETD8bcl7PPW1q-0"/>
+<!-- Optical Reticle Overlay -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center p-6">
+<div class="w-32 h-32 rounded-xl border-2 border-secondary-container/80 relative flex items-center justify-center">
+<!-- Corner Reticle crosshairs -->
+<span class="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-secondary-container"></span>
+<span class="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-secondary-container"></span>
+<span class="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-secondary-container"></span>
+<span class="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-secondary-container"></span>
+<div class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></div>
+</div>
+</div>
+<!-- Floating Live Recognition Tag -->
+<div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-2 rounded-lg bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-surface-dim">Identificado</span>
+<span class="font-label-md text-label-md font-semibold text-inverse-on-surface">Cámara Vintage 35mm</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider">Rango Actual</span>
+<div class="font-headline-sm text-headline-sm font-bold text-inverse-on-surface">$340 - $480</div>
+</div>
+</div>
+</div>
+<!-- Quick Scan Status Bar beneath image -->
+<div class="mt-2.5 pt-2 flex items-center justify-between text-on-surface-variant px-1">
+<span class="font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">bolt</span>
+<span>Indexando 40+ mercados en vivo</span>
+</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">0.18s latencia</span>
+</div>
+</div>
+</section>
+<!-- Market Confidence Banner (Fintech style) -->
+<section class="px-margin-mobile mt-4">
+<div class="w-full p-3.5 rounded-xl bg-surface-container flex items-start gap-3 shadow-xs">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Valoración algorítmica verificada</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          Datos auditados y contrastados con Amazon, eBay, StockX y Wallapop cada 15 minutos.
+        </p>
+</div>
+</div>
+</section>
+<!-- Recent Scans / History Highlights Carousel -->
+<section class="mt-5 flex flex-col">
+<div class="px-margin-mobile flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">history_toggle_off</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Búsquedas recientes</h2>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5 hover:underline" href="#">
+<span>Ver todo</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Horizontal Swipe Cards -->
+<div class="flex gap-3 overflow-x-auto px-margin-mobile pb-2 pt-0.5 no-scrollbar scroll-smooth">
+<!-- Item 1: Sony Alpha -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between shrink-0">
+<div class="flex items-center gap-2.5">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container shrink-0" data-alt="Close-up product photograph of a modern professional Sony Alpha A7 III mirrorless mirror camera body with clean glass reflections, studio white lighting, pristine tech aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoBCbufUlj93qo611Dt0QBjYcWvsvI-kTMIHyeMuPk9TmdEPi33-9asZw-AewHGOtVCnVNV3X-TlWqxHLa8hgFZGXQEQwQhmFUSydUE4u0EQbEO5FvhjPqnVd9IhJ6Y35T7A6maOb6UO_ckz_B7HbzjNbqZptgxcIJmKWBllqIJdlzkq5WgZGyAzaMJdtbT8qRAar-84YijZfelR_vYU6Frs73jt5Pn5ZkN4VPb64"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Fotografía Pro</span>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Sony Alpha A7 III</h3>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-0.5 font-medium mt-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> Establo (+1.2%)
+            </span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valor Estimado</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">$1,350 - $1,480</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Nike Dunk -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between shrink-0">
+<div class="flex items-center gap-2.5">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container shrink-0" data-alt="Side profile shot of a pristine Nike Dunk Low Retro sneaker in white and black panda colorway, studio softbox lighting, clean white product aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDblcbMNqoKukqSAgs66j482BXLhQ3jGWzZWJz7lAoEYrQ7QD1h8IIy0qS0GpVzO9sJeSajcOKt6EqVnHdLji5ixBZJZOLqsu7YWpx_Q65iZjmBCsJw0sSqoV-eCsUoQBvX8LBZcco2d_t8Qsev_4vVCj60CbXUnfdhA_Nr7Bq7igxmrgTYkPhTwNyBay4bTHH9rxTQzY2cKUA00XJEcw6SKH30CdNBb1XcWH9ldZs"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Sneakers &amp; Calzado</span>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Nike Dunk Low Retro</h3>
+<span class="font-label-sm text-label-sm text-secondary font-medium mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">local_offer</span> 4 ofertas activas
+            </span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valor Estimado</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">$110 - $135</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Bose QC45 -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between shrink-0">
+<div class="flex items-center gap-2.5">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-container shrink-0" data-alt="Premium wireless noise cancelling Bose QC45 headphones resting on an immaculate minimal tech desk, matte black finish, crisp ambient studio light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIFDRzBSZprNHKzVPcP_PKFX5vu0d939wFkvc5lDMVqZHfpCvSnUXY49PPcgEJI1Nk7HjqbwRKPePx_DADFTLx8vcsZGYTEZVuNf2-coDvIP2oraGBqv7U9zC2w5iStyVuGDAIhdg2BkmMJDXX_xp7NobrCM4a67X9yvvxc_RYZpCHGIXBPcb8BqflfSqmrHeRgSg3ZHKvoZWkgGnxHu__qx2E-xHgRA4KFcdsuQM"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Audio Premium</span>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Bose QuietComfort 45</h3>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-0.5 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">local_fire_department</span> Alta demanda
+            </span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Valor Estimado</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">$190 - $220</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Categories Section -->
+<section class="px-margin-mobile mt-5">
+<div class="flex flex-col mb-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Categorías populares</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Explora cotizaciones promedio y tendencias por sector</p>
+</div>
+<!-- Refined 2-column or 4-row category tiles -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Tech & Gadgets -->
+<button class="w-full p-3 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex items-center gap-3 text-left active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">memory</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Electrónica</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14.2k analizados</span>
+</div>
+</button>
+<!-- Computación -->
+<button class="w-full p-3 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex items-center gap-3 text-left active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">laptop_mac</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Tecnología</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9.8k analizados</span>
+</div>
+</button>
+<!-- Hogar y Diseño -->
+<button class="w-full p-3 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex items-center gap-3 text-left active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">chair</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Hogar &amp; Arte</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5.1k analizados</span>
+</div>
+</button>
+<!-- Coleccionables & Relojes -->
+<button class="w-full p-3 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex items-center gap-3 text-left active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">diamond</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Coleccionables</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8.4k analizados</span>
+</div>
+</button>
+<!-- Herramientas & Taller -->
+<button class="w-full p-3 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex items-center gap-3 text-left active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">handyman</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Herramientas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3.7k analizados</span>
+</div>
+</button>
+<!-- Moda y Accesorios -->
+<button class="w-full p-3 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex items-center gap-3 text-left active:scale-[0.98]" type="button">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">watch</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Moda de Lujo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">11.6k analizados</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Interactive Search / Filter bar at bottom of home view -->
+<section class="px-margin-mobile mt-5 mb-2">
+<div class="relative w-full rounded-xl bg-surface-container-lowest shadow-sm flex items-center px-3 h-12">
+<span class="material-symbols-outlined text-outline text-[22px]">search</span>
+<input class="w-full bg-transparent pl-2.5 pr-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="¿Buscas el valor de un modelo específico?" type="text"/>
+<button aria-label="Filtros de búsqueda" class="p-1 rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for scan triggers
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('touchstart', () => {}, {passive: true});
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 transition-colors text-primary font-semibold" data-path="inicio" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-md text-label-md leading-none">Inicio</span></a><a class="relative flex flex-col items-center justify-center -top-3.5 group" data-path="escanear" href="#"><div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(29,78,216,0.35)] transition-transform active:scale-95 group-hover:scale-105"><span class="material-symbols-outlined text-[28px]">document_scanner</span></div><span class="font-label-md text-label-md text-on-surface-variant mt-1 group-hover:text-primary transition-colors leading-none">Escanear</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="historial" href="#"><span class="material-symbols-outlined text-[24px]">history</span><span class="font-label-md text-label-md leading-none">Historial</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="mi-perfil" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md leading-none">Mi perfil</span></a></div></nav></body></html>
