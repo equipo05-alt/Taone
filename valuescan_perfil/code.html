@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head><meta charset="utf-8"/><title>Mi Perfil • ValueScan AI</title><meta name="description" content="Administra tu perfil de tasación, métricas de escaneos y preferencias del visor de ValueScan AI."/><meta property="og:title" content="Mi Perfil • ValueScan AI"/><meta property="og:description" content="Administra tu perfil de tasación, métricas de escaneos y preferencias del visor de ValueScan AI."/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-fixed-dim": "#bcc5ea", "tertiary-fixed-dim": "#ffb77f", "on-secondary": "#363100", "primary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#4e4800", "outline-variant": "#4c463c", "on-error": "#690005", "inverse-on-surface": "#3b2f13", secondary: "#d7c94d", "on-error-container": "#ffdad6", "on-tertiary": "#4e2600", "on-background": "#f5e0b8", "on-primary": "#262f4d", surface: "#1b1200", "surface-container": "#291e05", "secondary-container": "#9f9316", "on-secondary-container": "#2f2a00", "on-tertiary-fixed": "#2f1500", "tertiary-fixed": "#ffdcc3", "on-primary-container": "#4e5777", "surface-container-high": "#34280e", "on-tertiary-fixed-variant": "#6e3902", "surface-container-highest": "#3f3317", error: "#ffb4ab", "surface-dim": "#1b1200", "secondary-fixed-dim": "#d7c94d", "on-secondary-fixed": "#1f1c00", "on-surface": "#f5e0b8", outline: "#979084", "surface-bright": "#44381b", "surface-tint": "#bcc5ea", "tertiary-container": "#ffc396", "surface-container-lowest": "#150d00", primary: "#e7eaff", tertiary: "#ffe7d7", "inverse-surface": "#f5e0b8", "on-primary-fixed": "#101a37", "on-surface-variant": "#cec5b8", "inverse-primary": "#545d7d", background: "#1b1200", "error-container": "#93000a", "primary-container": "#c5cef3", "surface-container-low": "#241a03", "secondary-fixed": "#f4e566", "on-tertiary-container": "#834a14", "on-primary-fixed-variant": "#3d4664", "surface-variant": "#3f3317"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", gutter: "1rem", "space-xl": "2rem", margin: "1.5rem", "space-lg": "1.5rem", "margin-mobile": "1rem"}, fontFamily: {"headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "body-sm": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-lg-mobile": ["22px", {lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-sm": ["10px", {lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-xl-mobile": ["28px", {lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500"}], "headline-md": ["20px", {lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600"}], "headline-sm": ["16px", {lineHeight: "24px", fontWeight: "600"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600"}], "body-sm": ["12px", {lineHeight: "16px", fontWeight: "400"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><script src="/shared/scans-storage.js"></script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><a class="flex items-center gap-space-xs" href="/"><div class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center shrink-0"><svg aria-hidden="true" class="w-5 h-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#d7c94d" stroke-linecap="round" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="#e7eaff" stroke-width="2"/></svg></div><div class="flex items-center gap-1.5 ml-1"><span class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">ValueScan</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-wider uppercase">AI</span></div></a><div class="flex items-center gap-space-xs"><a aria-label="Historial de escaneos" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="/historial"><span class="material-symbols-outlined text-[22px]">notifications</span></a><a aria-label="Perfil de usuario" class="w-11 h-11 flex items-center justify-center rounded-full p-0.5 ring-2 ring-primary transition-all" href="/perfil"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" id="headerAvatarImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnslrSNk7LAdESiwiKke2C-aU2rJ8OpmZa0nFRYDtcQwzZ2WUunto1CaPctfEJ-VP81atPwCGiMJRrxAkvYg4GyXo2yNycVJOl7LdGuC1-RiJzYh4H3HsZOIeGOERRcz_PQnI7yg8PfbEskwDClWi-PYpF8lwbZXKE_cncTE7kDrxrcmUEXen_wAoGnEJ4pl5P_i7xWwjZQ9QwG1U5eD3eoHbib3ugB4IMD6HuuJw"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pt-3 pb-8 gap-5">
+<!-- Tarjeta de Identidad del Perfil -->
+<section class="relative rounded-2xl bg-surface-container-lowest border border-outline-variant/40 p-4 shadow-md overflow-hidden">
+<div class="absolute -top-12 -right-12 w-36 h-36 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex items-center gap-3.5 relative">
+<div class="relative shrink-0">
+<img alt="Avatar de perfil" class="w-16 h-16 rounded-2xl object-cover ring-2 ring-primary/60 bg-surface-container" id="profileAvatarImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnslrSNk7LAdESiwiKke2C-aU2rJ8OpmZa0nFRYDtcQwzZ2WUunto1CaPctfEJ-VP81atPwCGiMJRrxAkvYg4GyXo2yNycVJOl7LdGuC1-RiJzYh4H3HsZOIeGOERRcz_PQnI7yg8PfbEskwDClWi-PYpF8lwbZXKE_cncTE7kDrxrcmUEXen_wAoGnEJ4pl5P_i7xWwjZQ9QwG1U5eD3eoHbib3ugB4IMD6HuuJw"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-secondary-fixed font-label-sm text-label-sm font-semibold mb-1">
+<span>Tasador ValueScan</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface truncate" id="profileDisplayName">Coleccionista ValueScan</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate" id="profileSpecialty">Electrónica &amp; Coleccionables • Santiago, CL</p>
+</div>
+<button aria-label="Editar perfil" class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant hover:text-primary flex items-center justify-center shrink-0 border border-outline-variant/30 active:scale-95 transition-all" id="toggleEditProfileBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<!-- Formulario inline de edición de perfil -->
+<form class="hidden mt-4 pt-4 border-t border-outline-variant/30 flex flex-col gap-3" id="editProfileForm">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1" for="inputProfileName">Nombre visible</label>
+<input class="w-full h-11 px-3 rounded-xl bg-surface-container border border-outline-variant/50 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary" id="inputProfileName" maxlength="40" required type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1" for="inputProfileSpecialty">Especialidad</label>
+<input class="w-full h-11 px-3 rounded-xl bg-surface-container border border-outline-variant/50 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary" id="inputProfileSpecialty" maxlength="40" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1" for="inputProfileLocation">Ciudad</label>
+<input class="w-full h-11 px-3 rounded-xl bg-surface-container border border-outline-variant/50 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary" id="inputProfileLocation" maxlength="32" type="text"/>
+</div>
+</div>
+<div class="flex gap-2 pt-1">
+<button class="flex-1 h-10 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-outline-variant/40" id="cancelEditProfileBtn" type="button">Cancelar</button>
+<button class="flex-1 h-10 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold" type="submit">Guardar cambios</button>
+</div>
+</form>
+</section>
+<!-- Resumen de Cartera y Actividad de Escaneo -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Resumen de tasación</h2>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5 hover:underline" href="/historial">
+<span>Ver historial</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="rounded-xl bg-surface-container-lowest border border-outline-variant/30 p-3.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Escaneos guardados</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-1" id="statScansCount">0</div>
+</div>
+<div class="rounded-xl bg-surface-container-lowest border border-outline-variant/30 p-3.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Valor medio total</span>
+<div class="font-headline-md text-headline-md text-primary font-bold mt-1" id="statPortfolioUsd">$0</div>
+</div>
+<div class="rounded-xl bg-surface-container-lowest border border-outline-variant/30 p-3.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Categoría frecuente</span>
+<div class="font-label-lg text-label-lg text-secondary-fixed font-semibold mt-1 truncate" id="statTopCategory">Sin registros</div>
+</div>
+<div class="rounded-xl bg-surface-container-lowest border border-outline-variant/30 p-3.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Confianza promedio</span>
+<div class="font-headline-md text-headline-md text-tertiary font-bold mt-1" id="statAvgConfidence">–</div>
+</div>
+</div>
+<div class="mt-1" id="valuescanCategoryChart"></div>
+</section>
+<!-- Preferencias del Escáner IA -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Preferencias del escáner</h2>
+<span class="hidden font-label-sm text-label-sm text-tertiary font-semibold" id="prefsSavedBadge">Guardado</span>
+</div>
+<div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 p-4 flex flex-col gap-4">
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block mb-2">Modo predeterminado de cámara</span>
+<div class="grid grid-cols-3 gap-1.5 bg-surface-container p-1 rounded-full" id="defaultModeGroup">
+<button class="pref-mode-btn py-1.5 px-2 rounded-full font-label-sm text-label-sm font-semibold transition-all" data-mode="single" type="button">Objeto único</button>
+<button class="pref-mode-btn py-1.5 px-2 rounded-full font-label-sm text-label-sm font-semibold transition-all" data-mode="batch" type="button">Lote / Multi</button>
+<button class="pref-mode-btn py-1.5 px-2 rounded-full font-label-sm text-label-sm font-semibold transition-all" data-mode="barcode" type="button">Código</button>
+</div>
+</div>
+<div class="flex items-center justify-between gap-3 pt-2 border-t border-outline-variant/20">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Guardar escaneos automáticamente</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Almacena cada valoración en Escaneos recientes</div>
+</div>
+<button aria-checked="true" class="pref-toggle w-12 h-7 rounded-full p-1 transition-colors flex items-center" id="toggleAutoSave" role="switch" type="button">
+<span class="w-5 h-5 rounded-full bg-surface-container-lowest shadow transition-transform"></span>
+</button>
+</div>
+<div class="flex items-center justify-between gap-3 pt-2 border-t border-outline-variant/20">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Vibración háptica al capturar</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Respuesta táctil al presionar el obturador</div>
+</div>
+<button aria-checked="true" class="pref-toggle w-12 h-7 rounded-full p-1 transition-colors flex items-center" id="toggleHaptic" role="switch" type="button">
+<span class="w-5 h-5 rounded-full bg-surface-container-lowest shadow transition-transform"></span>
+</button>
+</div>
+<div class="flex items-center justify-between gap-3 pt-2 border-t border-outline-variant/20">
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Guía rápida en el visor</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Muestra consejos de encuadre bajo la cámara</div>
+</div>
+<button aria-checked="true" class="pref-toggle w-12 h-7 rounded-full p-1 transition-colors flex items-center" id="toggleShowTips" role="switch" type="button">
+<span class="w-5 h-5 rounded-full bg-surface-container-lowest shadow transition-transform"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Gestión de Datos Locales -->
+<section class="flex flex-col gap-2.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Datos y respaldo local</h2>
+<div class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 p-3.5 flex flex-col gap-2.5">
+<button class="w-full h-11 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-between transition-colors" id="exportJsonBtn" type="button">
+<span class="flex items-center gap-2.5 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[20px] text-primary">download</span>
+<span>Exportar historial y perfil (JSON)</span>
+</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</button>
+<button class="w-full h-11 px-4 rounded-xl bg-surface-container hover:bg-error-container/40 text-error flex items-center justify-between transition-colors" id="clearProfileHistoryBtn" type="button">
+<span class="flex items-center gap-2.5 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[20px]">delete_sweep</span>
+<span>Borrar historial de escaneos</span>
+</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<div class="hidden p-3 rounded-xl bg-error-container/80 text-on-error-container flex items-center justify-between gap-2" id="profileClearConfirm">
+<span class="font-body-sm text-body-sm font-medium">¿Confirmas eliminar todo el historial?</span>
+<div class="flex gap-2 shrink-0">
+<button class="px-3 py-1 rounded-full bg-black/25 font-label-sm text-label-sm" id="cancelProfileClearBtn" type="button">Cancelar</button>
+<button class="px-3 py-1 rounded-full bg-on-error-container text-error-container font-label-sm text-label-sm font-semibold" id="confirmProfileClearBtn" type="button">Eliminar</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    const storage = window.ValueScanStorage;
+    if (!storage) return;
+
+    const displayNameEl = document.getElementById('profileDisplayName');
+    const specialtyEl = document.getElementById('profileSpecialty');
+    const profileAvatarImg = document.getElementById('profileAvatarImg');
+    const headerAvatarImg = document.getElementById('headerAvatarImg');
+    const toggleEditBtn = document.getElementById('toggleEditProfileBtn');
+    const editForm = document.getElementById('editProfileForm');
+    const cancelEditBtn = document.getElementById('cancelEditProfileBtn');
+    const inputName = document.getElementById('inputProfileName');
+    const inputSpecialty = document.getElementById('inputProfileSpecialty');
+    const inputLocation = document.getElementById('inputProfileLocation');
+
+    const statScansCount = document.getElementById('statScansCount');
+    const statPortfolioUsd = document.getElementById('statPortfolioUsd');
+    const statTopCategory = document.getElementById('statTopCategory');
+    const statAvgConfidence = document.getElementById('statAvgConfidence');
+    const prefsSavedBadge = document.getElementById('prefsSavedBadge');
+
+    const toggleAutoSave = document.getElementById('toggleAutoSave');
+    const toggleHaptic = document.getElementById('toggleHaptic');
+    const toggleShowTips = document.getElementById('toggleShowTips');
+    const exportJsonBtn = document.getElementById('exportJsonBtn');
+    const clearHistoryBtn = document.getElementById('clearProfileHistoryBtn');
+    const clearConfirm = document.getElementById('profileClearConfirm');
+    const cancelClearBtn = document.getElementById('cancelProfileClearBtn');
+    const confirmClearBtn = document.getElementById('confirmProfileClearBtn');
+
+    let badgeTimer = null;
+    function flashSavedBadge() {
+      prefsSavedBadge.classList.remove('hidden');
+      clearTimeout(badgeTimer);
+      badgeTimer = setTimeout(() => prefsSavedBadge.classList.add('hidden'), 1500);
+    }
+
+    function renderProfile() {
+      const profile = storage.getProfile();
+      displayNameEl.textContent = profile.name || 'Coleccionista ValueScan';
+      const parts = [profile.specialty, profile.location].filter(Boolean);
+      specialtyEl.textContent = parts.join(' • ') || 'Tasador ValueScan AI';
+      if (profile.avatarUrl) {
+        profileAvatarImg.src = profile.avatarUrl;
+        headerAvatarImg.src = profile.avatarUrl;
+      }
+      inputName.value = profile.name || '';
+      inputSpecialty.value = profile.specialty || '';
+      inputLocation.value = profile.location || '';
+    }
+
+    function renderStats() {
+      const scans = storage.getRecentScans();
+      statScansCount.textContent = String(scans.length);
+      if (scans.length === 0) {
+        statPortfolioUsd.textContent = '$0';
+        statTopCategory.textContent = 'Sin registros';
+        statAvgConfidence.textContent = '–';
+        return;
+      }
+
+      const totalMid = scans.reduce((acc, s) => {
+        return acc + Math.round((Number(s.priceMinUsd || 0) + Number(s.priceMaxUsd || 0)) / 2);
+      }, 0);
+      statPortfolioUsd.textContent = `$${totalMid.toLocaleString('en-US')}`;
+
+      const catCounts = {};
+      scans.forEach(s => {
+        const c = s.category || 'General';
+        catCounts[c] = (catCounts[c] || 0) + 1;
+      });
+      const topCat = Object.entries(catCounts).sort((a, b) => b[1] - a[1])[0];
+      statTopCategory.textContent = topCat ? topCat[0] : 'General';
+
+      const avgConf = scans.reduce((acc, s) => acc + Number(s.confidence || 92), 0) / scans.length;
+      statAvgConfidence.textContent = `${avgConf.toFixed(1)}%`;
+    }
+
+    function setSwitchUI(btn, enabled) {
+      btn.setAttribute('aria-checked', enabled ? 'true' : 'false');
+      const knob = btn.querySelector('span');
+      if (enabled) {
+        btn.classList.add('bg-primary-container');
+        btn.classList.remove('bg-surface-container-high');
+        knob.classList.add('translate-x-5');
+      } else {
+        btn.classList.remove('bg-primary-container');
+        btn.classList.add('bg-surface-container-high');
+        knob.classList.remove('translate-x-5');
+      }
+    }
+
+    function renderPreferences() {
+      const prefs = storage.getPreferences();
+      document.querySelectorAll('.pref-mode-btn').forEach(btn => {
+        const active = btn.dataset.mode === prefs.defaultMode;
+        btn.classList.toggle('bg-primary-container', active);
+        btn.classList.toggle('text-on-primary', active);
+        btn.classList.toggle('shadow-sm', active);
+        btn.classList.toggle('text-on-surface-variant', !active);
+      });
+      setSwitchUI(toggleAutoSave, !!prefs.autoSave);
+      setSwitchUI(toggleHaptic, !!prefs.hapticFeedback);
+      setSwitchUI(toggleShowTips, !!prefs.showTips);
+    }
+
+    toggleEditBtn.addEventListener('click', () => {
+      editForm.classList.toggle('hidden');
+    });
+
+    cancelEditBtn.addEventListener('click', () => {
+      renderProfile();
+      editForm.classList.add('hidden');
+    });
+
+    editForm.addEventListener('submit', ev => {
+      ev.preventDefault();
+      storage.saveProfile({
+        name: inputName.value.trim() || 'Coleccionista ValueScan',
+        specialty: inputSpecialty.value.trim(),
+        location: inputLocation.value.trim(),
+      });
+      renderProfile();
+      editForm.classList.add('hidden');
+      flashSavedBadge();
+    });
+
+    document.querySelectorAll('.pref-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        storage.savePreferences({ defaultMode: btn.dataset.mode || 'single' });
+        renderPreferences();
+        flashSavedBadge();
+      });
+    });
+
+    toggleAutoSave.addEventListener('click', () => {
+      const current = storage.getPreferences();
+      storage.savePreferences({ autoSave: !current.autoSave });
+      renderPreferences();
+      flashSavedBadge();
+    });
+
+    toggleHaptic.addEventListener('click', () => {
+      const current = storage.getPreferences();
+      storage.savePreferences({ hapticFeedback: !current.hapticFeedback });
+      renderPreferences();
+      flashSavedBadge();
+    });
+
+    toggleShowTips.addEventListener('click', () => {
+      const current = storage.getPreferences();
+      storage.savePreferences({ showTips: !current.showTips });
+      renderPreferences();
+      flashSavedBadge();
+    });
+
+    exportJsonBtn.addEventListener('click', () => {
+      const payload = {
+        exportedAt: new Date().toISOString(),
+        profile: storage.getProfile(),
+        preferences: storage.getPreferences(),
+        scans: storage.getRecentScans(),
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `valuescan-respaldo-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    clearHistoryBtn.addEventListener('click', () => clearConfirm.classList.remove('hidden'));
+    cancelClearBtn.addEventListener('click', () => clearConfirm.classList.add('hidden'));
+    confirmClearBtn.addEventListener('click', () => {
+      storage.clearRecentScans();
+      clearConfirm.classList.add('hidden');
+      renderStats();
+    });
+
+    renderProfile();
+    renderStats();
+    renderPreferences();
+  })();
+</script><script src="/shared/category-chart.bundle.js"></script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-path="inicio" href="/"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm leading-none">Inicio</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="mapa" href="/mapa"><span class="material-symbols-outlined text-[24px]">map</span><span class="font-label-sm text-label-sm leading-none">Mapa</span></a><a class="relative flex flex-col items-center justify-center -top-3.5 group" data-path="escanear" href="/escanear"><div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(29,78,216,0.35)] transition-transform active:scale-95 group-hover:scale-105"><span class="material-symbols-outlined text-[28px]">document_scanner</span></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1 group-hover:text-primary transition-colors leading-none">Escanear</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="historial" href="/historial"><span class="material-symbols-outlined text-[24px]">history</span><span class="font-label-sm text-label-sm leading-none">Historial</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 transition-colors text-primary font-semibold" data-path="mi-perfil" href="/perfil"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm leading-none">Mi perfil</span></a></div></nav></body></html>

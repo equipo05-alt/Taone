@@ -11,7 +11,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="ValueScan Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrA3wuk2LjmPjfX4oKk8x8M0V5ObsIcyqbXZcujdmTbGHc_bL5_Ex0zr1tTmm3z5amwtsXpJwUWVGQ7fV0QQIsAylRuw9obYL8-rmppHkloTOE00I09ZMNI5WYpCRBmzyWcsrJ93725jmOHaaEhMwArR-h2AtIk4x2fXFsq6alszP62FeCsPCGioO81WHrvk6p2blvlnkVK1M8ZLZ3CYJAWD0bnF3-u-eWLvk4Aj4Eo"/><div class="flex items-center gap-1.5 ml-1"><span class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">ValueScan</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-wider uppercase">AI</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Perfil de usuario" class="w-11 h-11 flex items-center justify-center rounded-full p-0.5 hover:ring-2 ring-primary transition-all" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnslrSNk7LAdESiwiKke2C-aU2rJ8OpmZa0nFRYDtcQwzZ2WUunto1CaPctfEJ-VP81atPwCGiMJRrxAkvYg4GyXo2yNycVJOl7LdGuC1-RiJzYh4H3HsZOIeGOERRcz_PQnI7yg8PfbEskwDClWi-PYpF8lwbZXKE_cncTE7kDrxrcmUEXen_wAoGnEJ4pl5P_i7xWwjZQ9QwG1U5eD3eoHbib3ugB4IMD6HuuJw"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-8">
+  <script src="/shared/scans-storage.js"></script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><a class="flex items-center gap-space-xs" href="/"><div class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center shrink-0"><svg aria-hidden="true" class="w-5 h-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#d7c94d" stroke-linecap="round" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="#e7eaff" stroke-width="2"/></svg></div><div class="flex items-center gap-1.5 ml-1"><span class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">ValueScan</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-wider uppercase">AI</span></div></a><div class="flex items-center gap-space-xs"><button aria-label="Notificaciones" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Perfil de usuario" class="w-11 h-11 flex items-center justify-center rounded-full p-0.5 hover:ring-2 ring-primary transition-all" onclick="window.location.href='/perfil'" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnslrSNk7LAdESiwiKke2C-aU2rJ8OpmZa0nFRYDtcQwzZ2WUunto1CaPctfEJ-VP81atPwCGiMJRrxAkvYg4GyXo2yNycVJOl7LdGuC1-RiJzYh4H3HsZOIeGOERRcz_PQnI7yg8PfbEskwDClWi-PYpF8lwbZXKE_cncTE7kDrxrcmUEXen_wAoGnEJ4pl5P_i7xWwjZQ9QwG1U5eD3eoHbib3ugB4IMD6HuuJw"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-8">
 <!-- Top Ambient Glow & Intro Section -->
 <section class="relative px-margin-mobile pt-3 pb-2 flex flex-col items-start overflow-hidden">
 <!-- Subtle algorithmic tech glow in corner -->
@@ -39,16 +39,17 @@
 <!-- Main Quick Action CTAs -->
 <div class="w-full mt-4 flex flex-col gap-2.5">
 <!-- Primary Scan Trigger Button -->
-<button class="w-full h-[52px] rounded-full bg-primary-container text-on-primary flex items-center justify-center gap-2.5 shadow-[0_8px_24px_rgba(29,78,216,0.30)] active:scale-[0.98] transition-all group" onclick="window.location.href='/escanear'" type="button">
+<a class="w-full h-[52px] rounded-full bg-primary-container text-on-primary flex items-center justify-center gap-2.5 shadow-[0_8px_24px_rgba(29,78,216,0.30)] active:scale-[0.98] transition-all group" href="/escanear">
 <span class="material-symbols-outlined text-[24px] text-secondary-fixed group-hover:rotate-12 transition-transform duration-300">center_focus_strong</span>
 <span class="font-label-lg text-label-lg font-semibold tracking-wide">Escanear objeto ahora</span>
 <span class="material-symbols-outlined text-[18px] opacity-75 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
+</a>
 <!-- Secondary Upload Button -->
-<button class="w-full h-12 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all hover:bg-surface-container-low" type="button">
+<button class="w-full h-12 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all hover:bg-surface-container-low" id="homeGalleryBtn" type="button">
 <span class="material-symbols-outlined text-[20px] text-primary">add_photo_alternate</span>
 <span class="font-label-md text-label-md text-on-surface font-semibold">Subir desde galería de fotos</span>
 </button>
+<input accept="image/*" class="hidden" id="homeGalleryInput" type="file"/>
 </div>
 </section>
 <!-- Central Futuristic Hero Showcase Card -->
@@ -124,14 +125,15 @@
 <div class="flex items-center gap-1.5">
 <span class="material-symbols-outlined text-primary text-[20px]">history_toggle_off</span>
 <h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Búsquedas recientes</h2>
+<span class="hidden px-2 py-0.5 rounded-full bg-surface-container text-secondary-fixed font-label-sm text-label-sm font-semibold" id="recentScansBadge">0</span>
 </div>
-<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5 hover:underline" href="#">
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-0.5 hover:underline" href="/historial">
 <span>Ver todo</span>
 <span class="material-symbols-outlined text-[16px]">chevron_right</span>
 </a>
 </div>
 <!-- Horizontal Swipe Cards -->
-<div class="flex gap-3 overflow-x-auto px-margin-mobile pb-2 pt-0.5 no-scrollbar scroll-smooth">
+<div class="flex gap-3 overflow-x-auto px-margin-mobile pb-2 pt-0.5 no-scrollbar scroll-smooth" id="recentScansList">
 <!-- Item 1: Sony Alpha -->
 <div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-3 shadow-sm flex flex-col justify-between shrink-0">
 <div class="flex items-center gap-2.5">
@@ -274,16 +276,238 @@
 <section class="px-margin-mobile mt-5 mb-2">
 <div class="relative w-full rounded-xl bg-surface-container-lowest shadow-sm flex items-center px-3 h-12">
 <span class="material-symbols-outlined text-outline text-[22px]">search</span>
-<input class="w-full bg-transparent pl-2.5 pr-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="¿Buscas el valor de un modelo específico?" type="text"/>
-<button aria-label="Filtros de búsqueda" class="p-1 rounded-full text-on-surface-variant hover:text-primary transition-colors" type="button">
+<input class="w-full bg-transparent pl-2.5 pr-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" id="homeSearchInput" placeholder="¿Buscas el valor de un modelo específico?" type="text"/>
+<button aria-label="Ver historial completo" class="p-1 rounded-full text-on-surface-variant hover:text-primary transition-colors" onclick="window.location.href='/historial'" type="button">
 <span class="material-symbols-outlined text-[20px]">tune</span>
 </button>
 </div>
 </section>
 </div>
+<!-- Modal de Detalle para Escaneo Reciente -->
+<div class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-end sm:items-center justify-center p-4" id="homeScanModal">
+<div class="w-full max-w-md rounded-2xl bg-surface-container-low border border-outline-variant/40 p-5 shadow-2xl text-on-surface">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Objeto escaneado" class="w-14 h-14 rounded-xl object-cover bg-surface-container shrink-0" id="homeModalThumb"/>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed" id="homeModalCategory">Categoría</span>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate" id="homeModalTitle">Objeto</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="homeModalTime"></span>
+</div>
+</div>
+<button aria-label="Cerrar" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface shrink-0" id="closeHomeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="mt-4 p-3.5 rounded-xl bg-surface-container-lowest border border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Valoración Estimada</span>
+<div class="font-headline-lg text-headline-lg text-primary font-bold mt-0.5" id="homeModalPrice">$0 – $0 USD</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5" id="homeModalCondition"></p>
+</div>
+<div class="mt-5 flex gap-2">
+<button class="h-11 px-4 rounded-full bg-surface-container text-error font-label-md text-label-md font-semibold border border-outline-variant/40 active:scale-[0.98] transition-transform" id="homeModalDeleteBtn" type="button">Eliminar</button>
+<a class="flex-1 h-11 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform" href="/mapa" id="homeModalMapLink">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Lugares cercanos</span>
+</a>
+</div>
+</div>
+</div>
 <script>
-  // Simple micro-interaction for scan triggers
-  document.querySelectorAll('button').forEach(btn => {
-    btn.addEventListener('touchstart', () => {}, {passive: true});
-  });
-</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 transition-colors text-primary font-semibold" data-path="inicio" href="/"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-md text-label-md leading-none">Inicio</span></a><a class="relative flex flex-col items-center justify-center -top-3.5 group" data-path="escanear" href="/escanear"><div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(29,78,216,0.35)] transition-transform active:scale-95 group-hover:scale-105"><span class="material-symbols-outlined text-[28px]">document_scanner</span></div><span class="font-label-md text-label-md text-on-surface-variant mt-1 group-hover:text-primary transition-colors leading-none">Escanear</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="historial" href="#"><span class="material-symbols-outlined text-[24px]">history</span><span class="font-label-md text-label-md leading-none">Historial</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="mi-perfil" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-md text-label-md leading-none">Mi perfil</span></a></div></nav></body></html>
+  (function() {
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('touchstart', () => {}, {passive: true});
+    });
+
+    const homeGalleryBtn = document.getElementById('homeGalleryBtn');
+    const homeGalleryInput = document.getElementById('homeGalleryInput');
+    if (homeGalleryBtn && homeGalleryInput) {
+      homeGalleryBtn.addEventListener('click', () => homeGalleryInput.click());
+      homeGalleryInput.addEventListener('change', function(e) {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          const rawUrl = ev.target && ev.target.result;
+          if (typeof rawUrl !== 'string') return;
+          const img = new Image();
+          img.onload = function() {
+            const maxDim = 1024;
+            const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.round(img.width * scale);
+            canvas.height = Math.round(img.height * scale);
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            try {
+              sessionStorage.setItem('pendingScanImage', canvas.toDataURL('image/jpeg', 0.86));
+            } catch (_) {}
+            window.location.href = '/escanear';
+          };
+          img.src = rawUrl;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    const storage = window.ValueScanStorage;
+    const recentList = document.getElementById('recentScansList');
+    const recentBadge = document.getElementById('recentScansBadge');
+    const searchInput = document.getElementById('homeSearchInput');
+    const homeScanModal = document.getElementById('homeScanModal');
+    const closeHomeModalBtn = document.getElementById('closeHomeModalBtn');
+    const homeModalThumb = document.getElementById('homeModalThumb');
+    const homeModalCategory = document.getElementById('homeModalCategory');
+    const homeModalTitle = document.getElementById('homeModalTitle');
+    const homeModalTime = document.getElementById('homeModalTime');
+    const homeModalPrice = document.getElementById('homeModalPrice');
+    const homeModalCondition = document.getElementById('homeModalCondition');
+    const homeModalDeleteBtn = document.getElementById('homeModalDeleteBtn');
+
+    const defaultShowcaseCardsHtml = recentList ? recentList.innerHTML : '';
+    let activeModalId = null;
+
+    function openSavedScanModal(item) {
+      activeModalId = item.id;
+      const mapLink = document.getElementById('homeModalMapLink');
+      if (mapLink) {
+        mapLink.href = `/mapa?scanId=${encodeURIComponent(item.id)}`;
+      }
+      if (item.imageDataUrl) {
+        homeModalThumb.src = item.imageDataUrl;
+        homeModalThumb.classList.remove('hidden');
+      } else {
+        homeModalThumb.classList.add('hidden');
+      }
+      homeModalCategory.textContent = item.category || 'Escaneo reciente';
+      homeModalTitle.textContent = item.itemName || 'Objeto';
+      homeModalTime.textContent = storage.formatRelativeTime(item.scannedAt);
+      homeModalPrice.textContent = `${storage.formatUsdRange(item.priceMinUsd, item.priceMaxUsd)} USD`;
+      homeModalCondition.textContent = item.conditionNote || item.liquidityLabel || '';
+      homeScanModal.classList.remove('hidden');
+    }
+
+    function renderHomeRecentScans(filterText = '') {
+      if (!recentList || !storage) return;
+      const saved = storage.getRecentScans();
+      if (recentBadge) {
+        recentBadge.textContent = String(saved.length);
+        recentBadge.classList.toggle('hidden', saved.length === 0);
+      }
+
+      recentList.innerHTML = defaultShowcaseCardsHtml;
+      const q = filterText.trim().toLowerCase();
+
+      if (q) {
+        Array.from(recentList.children).forEach(node => {
+          if (!node.textContent.toLowerCase().includes(q)) {
+            node.remove();
+          }
+        });
+      }
+
+      const matchingSaved = q
+        ? saved.filter(item =>
+            (item.itemName || '').toLowerCase().includes(q) ||
+            (item.category || '').toLowerCase().includes(q)
+          )
+        : saved;
+
+      matchingSaved.slice().reverse().forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest border border-outline-variant/30 p-3 shadow-sm flex flex-col justify-between shrink-0 cursor-pointer hover:border-primary/50 transition-colors';
+
+        const top = document.createElement('div');
+        top.className = 'flex items-center gap-2.5';
+
+        if (item.imageDataUrl) {
+          const imgEl = document.createElement('img');
+          imgEl.className = 'w-14 h-14 rounded-lg object-cover bg-surface-container shrink-0';
+          imgEl.src = item.imageDataUrl;
+          imgEl.alt = item.itemName || 'Objeto escaneado';
+          top.appendChild(imgEl);
+        } else {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'w-14 h-14 rounded-lg bg-surface-container shrink-0 flex items-center justify-center text-on-surface-variant';
+          placeholder.innerHTML = '<span class="material-symbols-outlined text-[24px]">inventory_2</span>';
+          top.appendChild(placeholder);
+        }
+
+        const meta = document.createElement('div');
+        meta.className = 'flex flex-col min-w-0';
+        const catEl = document.createElement('span');
+        catEl.className = 'font-label-sm text-label-sm text-secondary-fixed truncate';
+        catEl.textContent = `${item.category || 'Escaneo'} • ${storage.formatRelativeTime(item.scannedAt)}`;
+        const nameEl = document.createElement('h3');
+        nameEl.className = 'font-label-md text-label-md font-semibold text-on-surface truncate';
+        nameEl.textContent = item.itemName || 'Objeto';
+        const confEl = document.createElement('span');
+        confEl.className = 'font-label-sm text-label-sm text-tertiary flex items-center gap-0.5 font-medium mt-0.5 truncate';
+        confEl.innerHTML = `<span class="material-symbols-outlined text-[13px]">verified</span> ${Number(item.confidence || 95).toFixed(1)}% IA`;
+        meta.appendChild(catEl);
+        meta.appendChild(nameEl);
+        meta.appendChild(confEl);
+        top.appendChild(meta);
+
+        const bottom = document.createElement('div');
+        bottom.className = 'mt-3 pt-2.5 flex items-center justify-between';
+        const priceWrap = document.createElement('div');
+        priceWrap.className = 'flex flex-col';
+        const priceLabel = document.createElement('span');
+        priceLabel.className = 'font-label-sm text-label-sm text-on-surface-variant';
+        priceLabel.textContent = 'Valor Estimado';
+        const priceVal = document.createElement('span');
+        priceVal.className = 'font-headline-sm text-headline-sm font-bold text-on-surface';
+        priceVal.textContent = storage.formatUsdRange(item.priceMinUsd, item.priceMaxUsd);
+        priceWrap.appendChild(priceLabel);
+        priceWrap.appendChild(priceVal);
+
+        const actionBtn = document.createElement('button');
+        actionBtn.type = 'button';
+        actionBtn.ariaLabel = 'Ver detalle del escaneo';
+        actionBtn.className = 'w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors';
+        actionBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">more_vert</span>';
+        actionBtn.addEventListener('click', ev => {
+          ev.stopPropagation();
+          openSavedScanModal(item);
+        });
+
+        bottom.appendChild(priceWrap);
+        bottom.appendChild(actionBtn);
+        card.appendChild(top);
+        card.appendChild(bottom);
+        card.addEventListener('click', () => openSavedScanModal(item));
+
+        recentList.prepend(card);
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => renderHomeRecentScans(searchInput.value));
+    }
+    if (closeHomeModalBtn) {
+      closeHomeModalBtn.addEventListener('click', () => homeScanModal.classList.add('hidden'));
+    }
+    if (homeModalDeleteBtn) {
+      homeModalDeleteBtn.addEventListener('click', () => {
+        if (activeModalId && storage) {
+          storage.deleteRecentScan(activeModalId);
+          homeScanModal.classList.add('hidden');
+          renderHomeRecentScans(searchInput ? searchInput.value : '');
+        }
+      });
+    }
+
+    renderHomeRecentScans();
+
+    const navInicio = document.querySelector('a[data-path="inicio"]');
+    if (navInicio) {
+      navInicio.addEventListener('click', function(ev) {
+        if (window.location.pathname === '/' || window.location.pathname === '/inicio') {
+          ev.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 transition-colors text-primary font-semibold cursor-pointer" data-path="inicio" href="/"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm leading-none">Inicio</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="mapa" href="/mapa"><span class="material-symbols-outlined text-[24px]">map</span><span class="font-label-sm text-label-sm leading-none">Mapa</span></a><a class="relative flex flex-col items-center justify-center -top-3.5 group" data-path="escanear" href="/escanear"><div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(29,78,216,0.35)] transition-transform active:scale-95 group-hover:scale-105"><span class="material-symbols-outlined text-[28px]">document_scanner</span></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1 group-hover:text-primary transition-colors leading-none">Escanear</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="historial" href="/historial"><span class="material-symbols-outlined text-[24px]">history</span><span class="font-label-sm text-label-sm leading-none">Historial</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="mi-perfil" href="/perfil"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm leading-none">Mi perfil</span></a></div></nav></body></html>

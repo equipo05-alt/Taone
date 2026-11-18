@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head><meta charset="utf-8"/><title>Mapa y Lugares Cercanos • ValueScan AI</title><meta name="description" content="Registra tu ubicación y encuentra tiendas, talleres y casas de tasación cercanas para tus objetos escaneados."/><meta property="og:title" content="Mapa y Lugares Cercanos • ValueScan AI"/><meta property="og:description" content="Registra tu ubicación y encuentra tiendas, talleres y casas de tasación cercanas para tus objetos escaneados."/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="/node_modules/leaflet/dist/leaflet.css" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+.leaflet-container{background:#150d00;font-family:'Inter',sans-serif;}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#241a03;color:#f5e0b8;border:1px solid rgba(76,70,60,0.6);box-shadow:0 12px 28px rgba(0,0,0,0.45);}
+.leaflet-popup-close-button{color:#cec5b8 !important;}
+.leaflet-control-zoom a{background:#241a03 !important;color:#f5e0b8 !important;border-color:rgba(76,70,60,0.55) !important;}
+.leaflet-control-attribution{background:rgba(21,13,0,0.75) !important;color:#979084 !important;font-size:10px !important;}
+.leaflet-control-attribution a{color:#c5cef3 !important;}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"primary-fixed-dim": "#bcc5ea", "tertiary-fixed-dim": "#ffb77f", "on-secondary": "#363100", "primary-fixed": "#dbe1ff", "on-secondary-fixed-variant": "#4e4800", "outline-variant": "#4c463c", "on-error": "#690005", "inverse-on-surface": "#3b2f13", secondary: "#d7c94d", "on-error-container": "#ffdad6", "on-tertiary": "#4e2600", "on-background": "#f5e0b8", "on-primary": "#262f4d", surface: "#1b1200", "surface-container": "#291e05", "secondary-container": "#9f9316", "on-secondary-container": "#2f2a00", "on-tertiary-fixed": "#2f1500", "tertiary-fixed": "#ffdcc3", "on-primary-container": "#4e5777", "surface-container-high": "#34280e", "on-tertiary-fixed-variant": "#6e3902", "surface-container-highest": "#3f3317", error: "#ffb4ab", "surface-dim": "#1b1200", "secondary-fixed-dim": "#d7c94d", "on-secondary-fixed": "#1f1c00", "on-surface": "#f5e0b8", outline: "#979084", "surface-bright": "#44381b", "surface-tint": "#bcc5ea", "tertiary-container": "#ffc396", "surface-container-lowest": "#150d00", primary: "#e7eaff", tertiary: "#ffe7d7", "inverse-surface": "#f5e0b8", "on-primary-fixed": "#101a37", "on-surface-variant": "#cec5b8", "inverse-primary": "#545d7d", background: "#1b1200", "error-container": "#93000a", "primary-container": "#c5cef3", "surface-container-low": "#241a03", "secondary-fixed": "#f4e566", "on-tertiary-container": "#834a14", "on-primary-fixed-variant": "#3d4664", "surface-variant": "#3f3317"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "0.75rem", gutter: "1rem", "space-xl": "2rem", margin: "1.5rem", "space-lg": "1.5rem", "margin-mobile": "1rem"}, fontFamily: {"headline-lg-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "body-sm": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-lg-mobile": ["22px", {lineHeight: "30px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-sm": ["10px", {lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "600"}], "headline-xl-mobile": ["28px", {lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500"}], "headline-md": ["20px", {lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600"}], "headline-sm": ["16px", {lineHeight: "24px", fontWeight: "600"}], "label-lg": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600"}], "body-sm": ["12px", {lineHeight: "16px", fontWeight: "400"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><script src="/shared/scans-storage.js"></script><script src="/node_modules/leaflet/dist/leaflet.js"></script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><a class="flex items-center gap-space-xs" href="/"><div class="w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center justify-center shrink-0"><svg aria-hidden="true" class="w-5 h-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" stroke="#d7c94d" stroke-linecap="round" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="#e7eaff" stroke-width="2"/></svg></div><div class="flex items-center gap-1.5 ml-1"><span class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">ValueScan</span><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-wider uppercase">AI</span></div></a><div class="flex items-center gap-space-xs"><a aria-label="Historial de escaneos" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="/historial"><span class="material-symbols-outlined text-[22px]">notifications</span></a><button aria-label="Perfil de usuario" class="w-11 h-11 flex items-center justify-center rounded-full p-0.5 hover:ring-2 ring-primary transition-all" onclick="window.location.href='/perfil'" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnslrSNk7LAdESiwiKke2C-aU2rJ8OpmZa0nFRYDtcQwzZ2WUunto1CaPctfEJ-VP81atPwCGiMJRrxAkvYg4GyXo2yNycVJOl7LdGuC1-RiJzYh4H3HsZOIeGOERRcz_PQnI7yg8PfbEskwDClWi-PYpF8lwbZXKE_cncTE7kDrxrcmUEXen_wAoGnEJ4pl5P_i7xWwjZQ9QwG1U5eD3eoHbib3ugB4IMD6HuuJw"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pt-3 pb-8 gap-4 max-w-4xl mx-auto">
+<!-- Encabezado de Mapa -->
+<section class="flex items-start justify-between gap-3">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Mapa y lugares cercanos</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Registra tu ubicación y descubre comercios o talleres para el objeto escaneado.</p>
+</div>
+</section>
+<!-- Tarjeta del Objeto Escaneado Activo -->
+<section class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 p-3.5 flex flex-col gap-3">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Objeto escaneado</span>
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline" href="/escanear">Nuevo escaneo</a>
+</div>
+<div class="flex items-center gap-3" id="activeItemCard">
+<div class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden shrink-0 flex items-center justify-center" id="activeItemThumbWrap">
+<span class="material-symbols-outlined text-[24px] text-primary">inventory_2</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-sm text-label-sm text-secondary-fixed truncate" id="activeItemCategory">Sin escaneo seleccionado</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate" id="activeItemName">Escanea o escribe un objeto</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant tabular-nums" id="activeItemPrice"></div>
+</div>
+</div>
+<!-- Selector rápido de escaneos recientes -->
+<div class="hidden flex gap-2 overflow-x-auto pb-0.5 no-scrollbar" id="recentItemChips"></div>
+<!-- Búsqueda manual de objeto/categoría si quiere consultar otro artículo -->
+<form class="flex items-center gap-2" id="customItemForm">
+<div class="flex-1 h-10 rounded-xl bg-surface-container border border-outline-variant/40 flex items-center px-3">
+<span class="material-symbols-outlined text-[18px] text-outline">category</span>
+<input class="w-full bg-transparent pl-2 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" id="customItemInput" placeholder="Buscar lugares para otro objeto (ej. Cámara, Reloj)..." type="text"/>
+</div>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold shrink-0 active:scale-95 transition-transform" type="submit">Buscar</button>
+</form>
+</section>
+<!-- Tarjeta de Registro de Ubicación -->
+<section class="rounded-2xl bg-surface-container-lowest border border-outline-variant/40 p-4 flex flex-col gap-3" id="locationPanel">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-surface-container text-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="locationHeading">Registra tu ubicación</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant break-words" id="locationSubheading">Necesitamos tu ubicación para determinar lugares cercanos relacionados con el objeto.</p>
+</div>
+</div>
+<button class="hidden shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-outline-variant/40 hover:bg-surface-container-high transition-colors" id="toggleLocationEditorBtn" type="button">Cambiar</button>
+</div>
+<!-- Controles para registrar/actualizar ubicación -->
+<div class="flex flex-col gap-2.5" id="locationEditor">
+<div class="flex flex-wrap gap-2">
+<button class="flex-1 min-w-[180px] h-11 px-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow active:scale-[0.98] transition-transform" id="useGpsBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">gps_fixed</span>
+<span id="useGpsLabel">Usar mi ubicación actual</span>
+</button>
+</div>
+<form class="flex items-center gap-2" id="addressSearchForm">
+<div class="flex-1 h-11 rounded-xl bg-surface-container border border-outline-variant/40 flex items-center px-3">
+<span class="material-symbols-outlined text-[19px] text-outline">search</span>
+<input class="w-full bg-transparent pl-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" id="addressSearchInput" placeholder="Buscar dirección, barrio o ciudad..." type="text"/>
+</div>
+<button class="h-11 px-4 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold border border-outline-variant/40 shrink-0 active:scale-95 transition-transform" id="addressSearchBtn" type="submit">Ubicar</button>
+</form>
+<div class="hidden flex flex-col gap-1.5 rounded-xl bg-surface-container p-2 border border-outline-variant/30" id="addressSuggestions"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="locationHintText">También puedes tocar cualquier punto del mapa para fijar tu pin manualmente.</p>
+</div>
+<!-- Barra de confirmación cuando el usuario toca el mapa para fijar pin temporal -->
+<div class="hidden p-3 rounded-xl bg-surface-container border border-secondary/50 flex items-center justify-between gap-3" id="draftPinBar">
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-secondary-fixed">Pin seleccionado en el mapa</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant tabular-nums truncate" id="draftPinCoords"></div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm" id="cancelDraftPinBtn" type="button">Cancelar</button>
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold" id="confirmDraftPinBtn" type="button">Registrar aquí</button>
+</div>
+</div>
+<div class="hidden p-2.5 rounded-xl bg-error-container/80 text-on-error-container font-body-sm text-body-sm" id="locationErrorBanner"></div>
+</section>
+<!-- Mapa Interactivo Leaflet + Controles de Radio -->
+<section class="rounded-2xl bg-surface-container-lowest border border-outline-variant/30 overflow-hidden flex flex-col">
+<div class="px-3.5 py-2.5 bg-surface-container-low border-b border-outline-variant/30 flex items-center justify-between gap-2 flex-wrap">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Mapa interactivo</span>
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-full" id="radiusGroup">
+<button class="radius-btn px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold text-on-surface-variant transition-colors" data-radius="1000" type="button">1 km</button>
+<button class="radius-btn px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold bg-primary-container text-on-primary transition-colors" data-radius="3000" type="button">3 km</button>
+<button class="radius-btn px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold text-on-surface-variant transition-colors" data-radius="5000" type="button">5 km</button>
+</div>
+</div>
+<div class="relative w-full h-[320px] sm:h-[380px] z-10" id="valuescanMap"></div>
+</section>
+<!-- Lista de Lugares Cercanos Determinados para el Objeto -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Lugares cercanos recomendados</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant tabular-nums" id="nearbyStatusText">Registra tu ubicación para ver tiendas, servicios técnicos o puntos de tasación cercanos.</p>
+</div>
+<button class="hidden shrink-0 w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center border border-outline-variant/40" id="refreshNearbyBtn" title="Actualizar lugares cercanos" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<div class="hidden flex flex-col gap-2.5" id="nearbyLoading">
+<div class="h-20 rounded-2xl bg-surface-container animate-pulse"></div>
+<div class="h-20 rounded-2xl bg-surface-container animate-pulse"></div>
+</div>
+<div class="flex flex-col gap-2.5" id="nearbyPlacesList"></div>
+<div class="hidden rounded-2xl bg-surface-container-lowest border border-outline-variant/30 p-5 text-center flex flex-col items-center gap-2" id="nearbyEmptyState">
+<span class="material-symbols-outlined text-[28px] text-secondary-fixed">location_searching</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs" id="nearbyEmptyMsg">No encontramos comercios especializados en este radio.</p>
+<button class="h-10 px-5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold" id="expandRadiusBtn" type="button">Buscar hasta 5 km</button>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    const storage = window.ValueScanStorage;
+    if (!storage || typeof L === 'undefined') return;
+
+    const activeItemThumbWrap = document.getElementById('activeItemThumbWrap');
+    const activeItemCategory = document.getElementById('activeItemCategory');
+    const activeItemName = document.getElementById('activeItemName');
+    const activeItemPrice = document.getElementById('activeItemPrice');
+    const recentItemChips = document.getElementById('recentItemChips');
+    const customItemForm = document.getElementById('customItemForm');
+    const customItemInput = document.getElementById('customItemInput');
+
+    const locationHeading = document.getElementById('locationHeading');
+    const locationSubheading = document.getElementById('locationSubheading');
+    const toggleLocationEditorBtn = document.getElementById('toggleLocationEditorBtn');
+    const locationEditor = document.getElementById('locationEditor');
+    const useGpsBtn = document.getElementById('useGpsBtn');
+    const useGpsLabel = document.getElementById('useGpsLabel');
+    const addressSearchForm = document.getElementById('addressSearchForm');
+    const addressSearchInput = document.getElementById('addressSearchInput');
+    const addressSuggestions = document.getElementById('addressSuggestions');
+    const draftPinBar = document.getElementById('draftPinBar');
+    const draftPinCoords = document.getElementById('draftPinCoords');
+    const cancelDraftPinBtn = document.getElementById('cancelDraftPinBtn');
+    const confirmDraftPinBtn = document.getElementById('confirmDraftPinBtn');
+    const locationErrorBanner = document.getElementById('locationErrorBanner');
+
+    const nearbyStatusText = document.getElementById('nearbyStatusText');
+    const refreshNearbyBtn = document.getElementById('refreshNearbyBtn');
+    const nearbyLoading = document.getElementById('nearbyLoading');
+    const nearbyPlacesList = document.getElementById('nearbyPlacesList');
+    const nearbyEmptyState = document.getElementById('nearbyEmptyState');
+    const nearbyEmptyMsg = document.getElementById('nearbyEmptyMsg');
+    const expandRadiusBtn = document.getElementById('expandRadiusBtn');
+
+    let selectedItem = null;
+    let userLocation = storage.getUserLocation();
+    let radiusMeters = 3000;
+    let draftCoords = null;
+    let draftMarker = null;
+    let userMarker = null;
+    let radiusCircle = null;
+    let placesLayer = L.layerGroup();
+    const placeMarkersById = new Map();
+
+    // Initialize Leaflet map centered on userLocation or Santiago/world default
+    const initialCenter = userLocation ? [userLocation.lat, userLocation.lng] : [-33.4489, -70.6693];
+    const initialZoom = userLocation ? 14 : 12;
+    const map = L.map('valuescanMap', {
+      zoomControl: true,
+      attributionControl: true,
+    }).setView(initialCenter, initialZoom);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      subdomains: 'abcd',
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+    }).addTo(map);
+
+    placesLayer.addTo(map);
+
+    function showLocationError(msg) {
+      if (!msg) {
+        locationErrorBanner.classList.add('hidden');
+        locationErrorBanner.textContent = '';
+        return;
+      }
+      locationErrorBanner.textContent = msg;
+      locationErrorBanner.classList.remove('hidden');
+    }
+
+    function createUserPinIcon() {
+      return L.divIcon({
+        className: 'vs-user-pin',
+        html: '<div style="width:22px;height:22px;border-radius:9999px;background:#d7c94d;border:3px solid #150d00;box-shadow:0 0 0 6px rgba(215,201,77,0.3);"></div>',
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+      });
+    }
+
+    function createPlacePinIcon(index) {
+      return L.divIcon({
+        className: 'vs-place-pin',
+        html: `<div style="min-width:26px;height:26px;padding:0 6px;border-radius:9999px;background:#c5cef3;color:#101a37;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;border:2px solid #150d00;box-shadow:0 4px 12px rgba(0,0,0,0.45);">${index + 1}</div>`,
+        iconSize: [26, 26],
+        iconAnchor: [13, 13],
+      });
+    }
+
+    function resolveInitialItem() {
+      const params = new URLSearchParams(window.location.search);
+      const scanId = params.get('scanId');
+      const scans = storage.getRecentScans();
+
+      if (scanId) {
+        const match = scans.find((s) => String(s.id) === String(scanId));
+        if (match) return match;
+      }
+
+      try {
+        const stashed = sessionStorage.getItem('valuescan_active_map_item');
+        if (stashed) {
+          const parsed = JSON.parse(stashed);
+          if (parsed && parsed.itemName) return parsed;
+        }
+      } catch (_) {}
+
+      if (scans.length > 0) return scans[0];
+      return null;
+    }
+
+    function renderSelectedItem() {
+      activeItemThumbWrap.innerHTML = '';
+      if (selectedItem && selectedItem.imageDataUrl) {
+        const img = document.createElement('img');
+        img.src = selectedItem.imageDataUrl;
+        img.alt = selectedItem.itemName || 'Objeto escaneado';
+        img.className = 'w-full h-full object-cover';
+        activeItemThumbWrap.appendChild(img);
+      } else {
+        activeItemThumbWrap.innerHTML = '<span class="material-symbols-outlined text-[24px] text-primary">inventory_2</span>';
+      }
+
+      if (selectedItem) {
+        activeItemCategory.textContent = selectedItem.category || 'Objeto escaneado';
+        activeItemName.textContent = selectedItem.itemName || 'Objeto analizado';
+        if (selectedItem.priceMinUsd || selectedItem.priceMaxUsd) {
+          activeItemPrice.textContent = `Valor estimado: ${storage.formatUsdRange(selectedItem.priceMinUsd, selectedItem.priceMaxUsd)} USD`;
+        } else {
+          activeItemPrice.textContent = 'Búsqueda personalizada por tipo de objeto';
+        }
+      } else {
+        activeItemCategory.textContent = 'Sin escaneo previo';
+        activeItemName.textContent = 'Escanea o escribe un objeto';
+        activeItemPrice.textContent = '';
+      }
+      renderRecentItemChips();
+    }
+
+    function renderRecentItemChips() {
+      const scans = storage.getRecentScans().slice(0, 6);
+      recentItemChips.innerHTML = '';
+      if (scans.length === 0) {
+        recentItemChips.classList.add('hidden');
+        return;
+      }
+      recentItemChips.classList.remove('hidden');
+      scans.forEach((scan) => {
+        const isSelected = selectedItem && String(selectedItem.id) === String(scan.id);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = isSelected
+          ? 'px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shrink-0 max-w-[170px] truncate'
+          : 'px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm shrink-0 max-w-[170px] truncate border border-outline-variant/30';
+        btn.textContent = scan.itemName;
+        btn.addEventListener('click', () => {
+          selectedItem = scan;
+          renderSelectedItem();
+          if (userLocation) fetchNearbyPlaces();
+        });
+        recentItemChips.appendChild(btn);
+      });
+    }
+
+    function renderLocationUI() {
+      userLocation = storage.getUserLocation();
+      if (userLocation) {
+        locationHeading.textContent = userLocation.address || userLocation.city || 'Ubicación registrada';
+        locationSubheading.textContent = `Coordenadas: ${userLocation.lat.toFixed(4)}, ${userLocation.lng.toFixed(4)} · Radio ${(radiusMeters / 1000).toFixed(0)} km`;
+        toggleLocationEditorBtn.classList.remove('hidden');
+        locationEditor.classList.add('hidden');
+        refreshNearbyBtn.classList.remove('hidden');
+
+        if (userMarker) map.removeLayer(userMarker);
+        userMarker = L.marker([userLocation.lat, userLocation.lng], { icon: createUserPinIcon() })
+          .addTo(map)
+          .bindPopup(`<strong>Tu ubicación registrada</strong><br/>${userLocation.address || ''}`);
+
+        if (radiusCircle) map.removeLayer(radiusCircle);
+        radiusCircle = L.circle([userLocation.lat, userLocation.lng], {
+          radius: radiusMeters,
+          color: '#c5cef3',
+          weight: 1.5,
+          dashArray: '5 5',
+          fillColor: '#c5cef3',
+          fillOpacity: 0.08,
+        }).addTo(map);
+      } else {
+        locationHeading.textContent = 'Registra tu ubicación';
+        locationSubheading.textContent = 'Necesitamos tu ubicación para determinar lugares cercanos relacionados con el objeto.';
+        toggleLocationEditorBtn.classList.add('hidden');
+        locationEditor.classList.remove('hidden');
+        refreshNearbyBtn.classList.add('hidden');
+      }
+    }
+
+    async function registerCoordinates(lat, lng, source, presetAddress, presetCity) {
+      showLocationError('');
+      let address = presetAddress || '';
+      let city = presetCity || '';
+
+      if (!address) {
+        try {
+          const resp = await fetch(`/api/geocode/reverse?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lng)}`);
+          const data = await resp.json();
+          if (resp.ok && data) {
+            address = data.address || '';
+            city = data.city || '';
+          }
+        } catch (_) {}
+      }
+
+      const saved = storage.saveUserLocation({ lat, lng, address, city, source });
+      if (draftMarker) {
+        map.removeLayer(draftMarker);
+        draftMarker = null;
+      }
+      draftCoords = null;
+      draftPinBar.classList.add('hidden');
+      addressSuggestions.classList.add('hidden');
+
+      renderLocationUI();
+      if (saved) {
+        map.setView([saved.lat, saved.lng], 14, { animate: true });
+        fetchNearbyPlaces();
+      }
+    }
+
+    async function fetchNearbyPlaces() {
+      if (!userLocation) return;
+      nearbyEmptyState.classList.add('hidden');
+      nearbyPlacesList.innerHTML = '';
+      nearbyLoading.classList.remove('hidden');
+      placesLayer.clearLayers();
+      placeMarkersById.clear();
+
+      const itemLabel = selectedItem?.itemName || selectedItem?.category || 'objeto general';
+      nearbyStatusText.textContent = `Buscando lugares cercanos para "${itemLabel}" en ${(radiusMeters / 1000).toFixed(0)} km...`;
+
+      try {
+        const resp = await fetch('/api/nearby-places', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            lat: userLocation.lat,
+            lng: userLocation.lng,
+            itemName: selectedItem?.itemName || '',
+            category: selectedItem?.category || '',
+            radiusMeters,
+          }),
+        });
+        const payload = await resp.json().catch(() => ({}));
+        nearbyLoading.classList.add('hidden');
+
+        if (!resp.ok) {
+          throw new Error(payload.error || 'No se pudieron obtener lugares cercanos.');
+        }
+
+        const places = Array.isArray(payload.places) ? payload.places : [];
+        if (places.length === 0) {
+          nearbyStatusText.textContent = `0 lugares encontrados en ${(radiusMeters / 1000).toFixed(0)} km.`;
+          nearbyEmptyMsg.textContent = `No encontramos comercios o talleres para "${itemLabel}" dentro de ${(radiusMeters / 1000).toFixed(0)} km.`;
+          expandRadiusBtn.textContent = radiusMeters < 5000 ? 'Ampliar radio a 5 km' : 'Ampliar radio a 10 km';
+          nearbyEmptyState.classList.remove('hidden');
+          return;
+        }
+
+        nearbyStatusText.textContent = `${places.length} lugares cercanos para "${itemLabel}" · radio ${(radiusMeters / 1000).toFixed(0)} km`;
+
+        const bounds = L.latLngBounds([[userLocation.lat, userLocation.lng]]);
+
+        places.forEach((place, idx) => {
+          const marker = L.marker([place.lat, place.lng], { icon: createPlacePinIcon(idx) })
+            .addTo(placesLayer)
+            .bindPopup(
+              `<div style="min-width:170px;">
+                <div style="font-weight:700;font-size:13px;color:#f5e0b8;">${idx + 1}. ${place.name}</div>
+                <div style="font-size:11px;color:#d7c94d;margin-top:2px;">${place.placeType} · ${place.distanceLabel}</div>
+                <div style="font-size:11px;color:#cec5b8;margin-top:4px;">${place.address}</div>
+              </div>`
+            );
+
+          placeMarkersById.set(place.id, marker);
+          bounds.extend([place.lat, place.lng]);
+
+          const card = document.createElement('div');
+          card.className = 'rounded-2xl bg-surface-container-lowest border border-outline-variant/30 p-3.5 flex flex-col gap-2.5 transition-colors hover:border-primary/50';
+
+          const top = document.createElement('div');
+          top.className = 'flex items-start justify-between gap-3';
+
+          const left = document.createElement('div');
+          left.className = 'flex items-start gap-2.5 min-w-0';
+
+          const badge = document.createElement('div');
+          badge.className = 'w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center shrink-0 mt-0.5 tabular-nums';
+          badge.textContent = String(idx + 1);
+
+          const info = document.createElement('div');
+          info.className = 'min-w-0';
+
+          const title = document.createElement('h3');
+          title.className = 'font-headline-sm text-headline-sm text-on-surface font-semibold truncate';
+          title.textContent = place.name;
+
+          const meta = document.createElement('div');
+          meta.className = 'font-label-sm text-label-sm text-secondary-fixed mt-0.5';
+          meta.textContent = `${place.placeType} · ${place.relevanceReason}`;
+
+          const addr = document.createElement('p');
+          addr.className = 'font-body-sm text-body-sm text-on-surface-variant mt-1 truncate';
+          addr.textContent = place.address;
+
+          info.appendChild(title);
+          info.appendChild(meta);
+          info.appendChild(addr);
+          left.appendChild(badge);
+          left.appendChild(info);
+
+          const dist = document.createElement('span');
+          dist.className = 'font-label-md text-label-md font-bold text-primary shrink-0 tabular-nums';
+          dist.textContent = place.distanceLabel;
+
+          top.appendChild(left);
+          top.appendChild(dist);
+
+          const actions = document.createElement('div');
+          actions.className = 'flex items-center gap-2 pt-1 border-t border-outline-variant/20';
+
+          const focusBtn = document.createElement('button');
+          focusBtn.type = 'button';
+          focusBtn.className = 'flex-1 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5 transition-colors';
+          focusBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span><span>Ver en mapa</span>';
+          focusBtn.addEventListener('click', () => {
+            map.flyTo([place.lat, place.lng], 16, { duration: 0.45 });
+            marker.openPopup();
+            document.getElementById('valuescanMap').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+
+          const routeLink = document.createElement('a');
+          routeLink.href = place.directionsUrl;
+          routeLink.target = '_blank';
+          routeLink.rel = 'noopener noreferrer';
+          routeLink.className = 'flex-1 h-9 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-transform';
+          routeLink.innerHTML = '<span class="material-symbols-outlined text-[16px]">directions</span><span>Cómo llegar</span>';
+
+          actions.appendChild(focusBtn);
+          actions.appendChild(routeLink);
+
+          card.appendChild(top);
+          card.appendChild(actions);
+          nearbyPlacesList.appendChild(card);
+        });
+
+        map.fitBounds(bounds, { padding: [36, 36], maxZoom: 15 });
+      } catch (err) {
+        nearbyLoading.classList.add('hidden');
+        nearbyStatusText.textContent = err?.message || 'Error al buscar lugares cercanos.';
+      }
+    }
+
+    // Map click to pick custom location pin
+    map.on('click', function(ev) {
+      const { lat, lng } = ev.latlng;
+      draftCoords = { lat, lng };
+      if (draftMarker) map.removeLayer(draftMarker);
+      draftMarker = L.marker([lat, lng]).addTo(map);
+      draftPinCoords.textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+      draftPinBar.classList.remove('hidden');
+      locationEditor.classList.remove('hidden');
+    });
+
+    confirmDraftPinBtn.addEventListener('click', () => {
+      if (draftCoords) {
+        registerCoordinates(draftCoords.lat, draftCoords.lng, 'pin');
+      }
+    });
+
+    cancelDraftPinBtn.addEventListener('click', () => {
+      if (draftMarker) {
+        map.removeLayer(draftMarker);
+        draftMarker = null;
+      }
+      draftCoords = null;
+      draftPinBar.classList.add('hidden');
+    });
+
+    toggleLocationEditorBtn.addEventListener('click', () => {
+      locationEditor.classList.toggle('hidden');
+    });
+
+    useGpsBtn.addEventListener('click', () => {
+      showLocationError('');
+      if (!navigator.geolocation) {
+        showLocationError('Tu navegador no admite geolocalización. Busca tu dirección o toca el mapa.');
+        return;
+      }
+      useGpsBtn.disabled = true;
+      useGpsLabel.textContent = 'Obteniendo ubicación...';
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          useGpsBtn.disabled = false;
+          useGpsLabel.textContent = 'Usar mi ubicación actual';
+          registerCoordinates(pos.coords.latitude, pos.coords.longitude, 'gps');
+        },
+        (err) => {
+          useGpsBtn.disabled = false;
+          useGpsLabel.textContent = 'Usar mi ubicación actual';
+          const denied = err && err.code === 1;
+          showLocationError(
+            denied
+              ? 'Permiso de ubicación denegado. Puedes buscar tu dirección arriba o tocar directamente en el mapa.'
+              : 'No se pudo obtener tu GPS. Busca tu dirección o toca en el mapa para fijar tu pin.'
+          );
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+      );
+    });
+
+    addressSearchForm.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      showLocationError('');
+      const q = addressSearchInput.value.trim();
+      if (q.length < 2) {
+        showLocationError('Escribe al menos 2 caracteres para buscar una dirección o ciudad.');
+        return;
+      }
+      addressSuggestions.innerHTML = '<div class="px-3 py-2 text-body-sm text-on-surface-variant">Buscando direcciones...</div>';
+      addressSuggestions.classList.remove('hidden');
+
+      try {
+        const resp = await fetch(`/api/geocode/search?q=${encodeURIComponent(q)}`);
+        const data = await resp.json();
+        if (!resp.ok) throw new Error(data.error || 'Error buscando dirección.');
+
+        const results = Array.isArray(data.results) ? data.results : [];
+        addressSuggestions.innerHTML = '';
+        if (results.length === 0) {
+          addressSuggestions.innerHTML = '<div class="px-3 py-2 text-body-sm text-on-surface-variant">Sin resultados. Intenta con otra referencia o toca el mapa.</div>';
+          return;
+        }
+        results.forEach((item) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container-high transition-colors flex flex-col';
+          const label = document.createElement('span');
+          label.className = 'font-label-md text-label-md font-semibold text-on-surface truncate';
+          label.textContent = item.shortLabel;
+          const sub = document.createElement('span');
+          sub.className = 'font-body-sm text-body-sm text-on-surface-variant truncate';
+          sub.textContent = item.displayName;
+          btn.appendChild(label);
+          btn.appendChild(sub);
+          btn.addEventListener('click', () => {
+            registerCoordinates(item.lat, item.lng, 'search', item.shortLabel + (item.city ? `, ${item.city}` : ''), item.city);
+          });
+          addressSuggestions.appendChild(btn);
+        });
+      } catch (err) {
+        addressSuggestions.classList.add('hidden');
+        showLocationError(err?.message || 'Error al buscar dirección.');
+      }
+    });
+
+    customItemForm.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const val = customItemInput.value.trim();
+      if (!val) return;
+      selectedItem = {
+        id: 'custom',
+        itemName: val,
+        category: val,
+      };
+      renderSelectedItem();
+      if (userLocation) {
+        fetchNearbyPlaces();
+      }
+    });
+
+    document.querySelectorAll('.radius-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        radiusMeters = Number(btn.dataset.radius || 3000);
+        document.querySelectorAll('.radius-btn').forEach((other) => {
+          const active = Number(other.dataset.radius) === radiusMeters;
+          other.classList.toggle('bg-primary-container', active);
+          other.classList.toggle('text-on-primary', active);
+          other.classList.toggle('text-on-surface-variant', !active);
+        });
+        renderLocationUI();
+        if (userLocation) fetchNearbyPlaces();
+      });
+    });
+
+    expandRadiusBtn.addEventListener('click', () => {
+      radiusMeters = radiusMeters < 5000 ? 5000 : 10000;
+      document.querySelectorAll('.radius-btn').forEach((other) => {
+        const active = Number(other.dataset.radius) === radiusMeters;
+        other.classList.toggle('bg-primary-container', active);
+        other.classList.toggle('text-on-primary', active);
+        other.classList.toggle('text-on-surface-variant', !active);
+      });
+      renderLocationUI();
+      if (userLocation) fetchNearbyPlaces();
+    });
+
+    refreshNearbyBtn.addEventListener('click', () => {
+      if (userLocation) fetchNearbyPlaces();
+    });
+
+    selectedItem = resolveInitialItem();
+    renderSelectedItem();
+    renderLocationUI();
+    if (userLocation) {
+      fetchNearbyPlaces();
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-path="inicio" href="/"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm leading-none">Inicio</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 transition-colors text-primary font-semibold" data-path="mapa" href="/mapa"><span class="material-symbols-outlined text-[24px]">map</span><span class="font-label-sm text-label-sm leading-none">Mapa</span></a><a class="relative flex flex-col items-center justify-center -top-3.5 group" data-path="escanear" href="/escanear"><div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_20px_rgba(29,78,216,0.35)] transition-transform active:scale-95 group-hover:scale-105"><span class="material-symbols-outlined text-[28px]">document_scanner</span></div><span class="font-label-sm text-label-sm text-on-surface-variant mt-1 group-hover:text-primary transition-colors leading-none">Escanear</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="historial" href="/historial"><span class="material-symbols-outlined text-[24px]">history</span><span class="font-label-sm text-label-sm leading-none">Historial</span></a><a class="flex flex-col items-center justify-center min-w-[52px] h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="mi-perfil" href="/perfil"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm leading-none">Mi perfil</span></a></div></nav></body></html>

@@ -6,10 +6,19 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "node -e \"console.log('Static site build complete')\"",
-    "lint": "node --check server.js"
+    "build": "esbuild src/CategorySummaryChart.tsx --bundle --minify --format=iife --outfile=shared/category-chart.bundle.js --jsx=automatic --define:process.env.NODE_ENV=\\\"production\\\"",
+    "lint": "node --check server.js && node --check shared/scans-storage.js && esbuild src/CategorySummaryChart.tsx --format=esm --log-level=error > /dev/null"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "@google/genai": "^3.6.0",
+    "@types/leaflet": "^1.9.22",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "express": "^4.21.2",
+    "leaflet": "^1.9.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "recharts": "^3.11.0"
   }
 }
